@@ -1,0 +1,119 @@
+baseURL       = "https://nokware.net/"
+languageCode  = "en-us"
+title         = "Nokware | Custom Software Agency"
+theme         = "roxo"
+summarylength = 25
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = ""
+    weight  = 1
+   [[menu.nav]]
+    name    = "Mail"
+    url     = "mail"
+    weight  = 2
+  [[menu.nav]]
+    name    = "About"
+    url     = "about"
+    weight  = 3
+  [[menu.nav]]
+    name    = "Portfolio"
+    url     = "portfolio"
+    weight  = 4
+  [[menu.nav]]
+    name    = "Blog"
+    url     = "blog"
+    weight  = 5
+  [[menu.nav]]
+    name    = "Get in touch"
+    url     = "contact"
+    weight  = 6
+
+# Site Params
+[params]
+  logo = "images/logo.png"
+  dateFormat = "26 FEB 1994"
+  # Meta data
+  description = "Nokware, LLC. A custom software solution company."
+  author = "Mish Ochu"
+  # Google Analitycs
+  googleAnalitycsID = "Your ID"
+  # We're using formspree.io for form handling, paste your formspree url below
+  formspreeFormUrl  = "https://formspree.io/myykjpje"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Get in touch"
+    url     = "contact"
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "images/backgrounds/hero-background.png"
+    heading               = "We’re Software Engineers That Believe In Empowering the Individual"
+    tagline               = "THE REVOLUTION WILL NOT BE CENTRALIZED"
+    primary_button        = "See Our Work"
+    primary_button_url    = "portfolio"
+    secondary_button      = "Connect with Us"
+    secondary_button_url  = "contact"
+
+  [params.portfolio]
+    enable    = true
+    title     = "OUR RECENT WORK"
+    subtitle  = "Crafting experiences and seeking to make the complex clear & beautiful."
+
+  [params.call_to_action]
+    enable              = true
+    background_image    = "images/backgrounds/cta-background.jpg"
+    title               = "LET’S SOLVE YOUR PROBLEM"
+    primary_button      = "Submit a Query"
+    primary_button_url  = "contact"
+    secondary_button    = "I'm Not Convinced"
+    secondary_button_url = "portfolio"
+
+  [params.footer]
+    # Footer Contact Info
+    [params.footer.contactInfo]
+      title   = "Contact Info"
+      address = "1883 W Royal Hunte Drive Suite 200A Cedar City, UT 84720"
+      phone   = "385-202-6173"
+      email   = "info@nokware.net"
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Sitemap"
+        [[params.footer.sitemap.link]]
+          name = "About Company"
+          url  = "about"
+        [[params.footer.sitemap.link]]
+          name = "Projects"
+          url  = "portfolio"
+        [[params.footer.sitemap.link]]
+          name = "Blog"
+          url  = "blog"
+        [[params.footer.sitemap.link]]
+          name = "Contact"
+          url  = "contact"
+      # Footer Social Media
+      [params.footer.social]
+        title   = "Social Media"
+        [[params.footer.social.link]]
+          name = "Medium"
+          url  = "#"
+        [[params.footer.social.link]]
+          name = "Behance"
+          url  = "#"
+        [[params.footer.social.link]]
+          name = "Dribbble"
+          url  = "#"
+        [[params.footer.social.link]]
+          name = "Instagram"
+          url  = "#"
+      # Footer Service
+      [params.footer.service]
+        title       = "We help people:"
+        description = "design and develop solutions<br>produce valuable cultural content<br>create fresh experiences<br>own their own infrastructure"

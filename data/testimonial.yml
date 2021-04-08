@@ -1,0 +1,39 @@
+enable  : true
+title   : "WHO WE'VE HELPED"
+subtitle: "What clients says about our services."
+testimonial_item :
+  - thumb : "images/testimonial/user-thumb-one.jpg"
+    name  : "Wasi Uddin"
+    company_position: "Project Manager, Spectra Energy"
+    quote : > 
+            "Trust us we had some mavericks on our team. Nokware and their engineers were always methodical. They produced easy to maintain products that are still in use to this day." 
+
+  - thumb : "images/testimonial/user-thumb-two.jpg"
+    name  : "Tommy Miles"
+    company_position: "Partner, MRE Consulting"
+    quote : > 
+            "While consulting with Sequent Energy Management we were tasked to pull off feats of uncommon distributed computing, concepts well ahead of their time. Nokware and their engineers didn't stop until they found a solution, tested it relentlessly and deployed it across dozens of disparate systems." 
+
+  - thumb : "images/testimonial/user-thumb-three.jpg"
+    name  : "Chris Stark"
+    company_position: "Project Manager, BP"
+    quote : > 
+            "At BP delivery is everything, and Nokware got it done, often at short notice or at night. The dedication to delivery was second to none." 
+
+  - thumb : "images/testimonial/user-thumb-four.jpg"
+    name  : "Ishraque Ludhi"
+    company_position: "Senior Manager, KBR"
+    quote : > 
+            "Nokware and their engineers maintained focus and attention to detail for a very long time. While others wasted thousands of dollars and hours, they were able to drill down to the software and servers absolutely necessary to facilitate a large corporate spin off." 
+
+  - thumb : "images/testimonial/user-thumb-five.jpg"
+    name  : "David Moise"
+    company_position: "CEO, Decide Consulting"
+    quote : > 
+            "Nokware pivoted to focus on managing the customers expectations. The agility with which Nokware can implement new features and workflows is a key element, particularly when the customer is not quite sure of what they want." 
+
+  - thumb : "images/testimonial/user-thumb-six.jpg"
+    name  : "Deanna Delapasse"
+    company_position: "Lead Developer, Go Figure, Inc"
+    quote : > 
+            "We’re a really busy gym management company, and Nokware gave our customers an easy way to bill members, process EFT or print checks so they can focus on a welcoming and safe environment for their members to workout." 

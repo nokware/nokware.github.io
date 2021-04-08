@@ -1,0 +1,14 @@
+enable : true
+heading : "THE PROOF IS IN THE PUDDING!"
+counter_item: 
+  - title: "Happy Clients"
+    number: "10"
+
+  - title: "Projects Completed"
+    number: "27"
+
+  - title: "Blockchains supported"
+    number: "9"
+
+  - title: "Years of Experience"
+    number: "21"

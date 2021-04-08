@@ -1,0 +1,16 @@
+enable  : true
+title   : The team that makes the difference.
+members  :
+  - image       : images/team/team-member-one.jpg
+    name        : MISHAEL OCHU
+    designation : Lead Developer
+    medium      : https://www.mishochu.com/
+    linkedIn    : https://www.linkedin.com/in/mishochu/
+    instagram   : https://www.instagram.com/mishochu/
+
+  - image       : images/team/team-member-two.jpg
+    name        : JACOB CARRIERO
+    designation : Software Engineer
+    medium      : https://www.medium.com/
+    linkedIn    : https://www.linkedin.com/in/jacob-carriero-4726781b3/
+    instagram   : https://www.instagram.com/
