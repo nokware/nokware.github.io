@@ -1,6 +1,6 @@
-baseURL       = "https://nokware.net/"
+baseURL       = "http://example.org/"
 languageCode  = "en-us"
-title         = "Nokware | Custom Software Agency"
+title         = "Roxo | Creative Design Agency"
 theme         = "roxo"
 summarylength = 25
 
@@ -11,38 +11,34 @@ summarylength = 25
     name    = "Home"
     url     = ""
     weight  = 1
-   [[menu.nav]]
-    name    = "Mail"
-    url     = "mail"
-    weight  = 2
   [[menu.nav]]
     name    = "About"
     url     = "about"
-    weight  = 3
+    weight  = 2
   [[menu.nav]]
     name    = "Portfolio"
     url     = "portfolio"
-    weight  = 4
+    weight  = 3
   [[menu.nav]]
     name    = "Blog"
     url     = "blog"
-    weight  = 5
+    weight  = 4
   [[menu.nav]]
     name    = "Get in touch"
     url     = "contact"
-    weight  = 6
+    weight  = 5
 
 # Site Params
 [params]
   logo = "images/logo.png"
   dateFormat = "26 FEB 1994"
   # Meta data
-  description = "Nokware, LLC. A custom software solution company."
-  author = "Mish Ochu"
+  description = "Roxo Hugo themes | Design Agency Template by StaticMania"
+  author = "StaticMania"
   # Google Analitycs
   googleAnalitycsID = "Your ID"
   # We're using formspree.io for form handling, paste your formspree url below
-  formspreeFormUrl  = "https://formspree.io/f/xnqljqyq"
+  formspreeFormUrl  = "https://formspree.io/myykjpje"
   
   # Navbar Action Button
   [params.navAction]
@@ -54,35 +50,35 @@ summarylength = 25
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "images/backgrounds/hero-background.png"
-    heading               = "We’re Software Engineers That Believe In Empowering the Individual"
-    tagline               = "THE REVOLUTION WILL NOT BE CENTRALIZED"
-    primary_button        = "See Our Work"
+    background_image      = "images/backgrounds/hero-background.jpg"
+    heading               = "We’re a Design Studio That Belies In the Great Ideas"
+    tagline               = "WE WORK HARD, WE PLAY HARD"
+    primary_button        = "See Our Works"
     primary_button_url    = "portfolio"
     secondary_button      = "Connect with Us"
     secondary_button_url  = "contact"
 
   [params.portfolio]
     enable    = true
-    title     = "OUR RECENT WORK"
+    title     = "OUR RECENT WORKS"
     subtitle  = "Crafting experiences and seeking to make the complex clear & beautiful."
 
   [params.call_to_action]
     enable              = true
     background_image    = "images/backgrounds/cta-background.jpg"
-    title               = "LET’S SOLVE YOUR PROBLEM"
-    primary_button      = "Submit a Query"
+    title               = "LET’S WORK TOGETHER"
+    primary_button      = "Submit Query"
     primary_button_url  = "contact"
-    secondary_button    = "I'm Not Convinced"
+    secondary_button    = "Not Convinced"
     secondary_button_url = "portfolio"
 
   [params.footer]
     # Footer Contact Info
     [params.footer.contactInfo]
       title   = "Contact Info"
-      address = "1883 W Royal Hunte Drive Suite 200A Cedar City, UT 84720"
-      phone   = "385-202-6173"
-      email   = "info@nokware.net"
+      address = "713 Elmwood St.<br>Prior Lake, MN 55372"
+      phone   = "409-896-1444"
+      email   = "info@roxo.co"
       # Footer Sitemap
       [params.footer.sitemap]
         title   = "Sitemap"
@@ -115,5 +111,5 @@ summarylength = 25
           url  = "#"
       # Footer Service
       [params.footer.service]
-        title       = "We help people:"
-        description = "design and develop solutions<br>produce valuable cultural content<br>create fresh experiences<br>own their own infrastructure"
+        title       = "We help brands:"
+        description = "develop design solutions<br>produce valuable cultural content<br>create fresh brand experience"
