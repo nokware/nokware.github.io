@@ -102,13 +102,13 @@ summarylength = 25
       [params.footer.social]
         title   = "Social Media"
         [[params.footer.social.link]]
-          name = "Medium"
+          name = "Gab"
           url  = "#"
         [[params.footer.social.link]]
-          name = "Behance"
+          name = "Twitter"
           url  = "#"
         [[params.footer.social.link]]
-          name = "Dribbble"
+          name = "Youtube"
           url  = "#"
         [[params.footer.social.link]]
           name = "Instagram"
