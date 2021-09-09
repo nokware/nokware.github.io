@@ -1,0 +1,3 @@
+[submodule "hugo-tools"]
+	path = hugo-tools
+	url = git@git.nokware.net:nokware/hugo-tools.git
