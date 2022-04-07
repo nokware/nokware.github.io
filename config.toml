@@ -3,7 +3,7 @@ languageCode  = "en-us"
 title         = "Nokware | Custom Software Agency"
 theme         = "roxo"
 summarylength = 25
-archetypeDir = "hugo-tools\archetypes"
+archetypeDir = "archetypes"
 
 # Site Menus
 [menu]
