@@ -7,11 +7,13 @@ pipeline {
             }
 
             steps {
+				sh 'git submodule update --init --recursive'
                 sh 'hugo --verbose'
                 stash includes: '**/public/', name: 'app'
             }
         }
-
+		
+		/*
         stage("deploy") {
             when { branch 'master' }
             agent { label 'production' }
@@ -20,5 +22,6 @@ pipeline {
                 sh 'cp -R public/* /var/www/nokware.net'
             }
         }
+		*/
     }
 }
