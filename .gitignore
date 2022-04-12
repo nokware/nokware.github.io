@@ -56,3 +56,6 @@ Thumbs.db
 *.code-workspace
 public/
 resources/
+
+# Hugo Build Files
+.hugo_build.lock
