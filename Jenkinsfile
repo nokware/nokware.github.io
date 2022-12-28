@@ -13,15 +13,13 @@ pipeline {
             }
         }
 		
-		/*
         stage("deploy") {
             when { branch 'master' }
             agent { label 'production' }
             steps {
                 unstash 'app'
-                sh 'cp -R public/* /var/www/nokware.net'
+                sh "./scripts/deploy-public.sh"
             }
         }
-		*/
     }
 }
