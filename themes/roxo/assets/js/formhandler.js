@@ -20,6 +20,26 @@ window.addEventListener("DOMContentLoaded", function() {
     var data = new FormData(form);
     ajax(form.method, form.action, data, success, error);
   });
+
+
+  /** This section is only needed once per page if manually copying **/
+  if (typeof MauticSDKLoaded == 'undefined') {
+      var MauticSDKLoaded = true;
+      var head            = document.getElementsByTagName('head')[0];
+      var script          = document.createElement('script');
+      script.type         = 'text/javascript';
+      script.src          = 'https://mautic.nokware.net/index.php/media/js/mautic-form.js?vf6fd3319';
+      script.onload       = function() {
+          MauticSDK.onLoad();
+      };
+      head.appendChild(script);
+      var MauticDomain = 'https://mautic.nokware.net/index.php';
+      var MauticLang   = {
+          'submittingMessage': "Please wait..."
+      }
+  }else if (typeof MauticSDK != 'undefined') {
+      MauticSDK.onLoad();
+  }
 });
 
 // helper function for sending an AJAX request
@@ -38,3 +58,5 @@ function ajax(method, url, data, success, error) {
   };
   xhr.send(data);
 }
+
+    

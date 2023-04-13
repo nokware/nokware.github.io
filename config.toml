@@ -47,8 +47,6 @@ archetypeDir = "hugo-tools/archetypes"
   author = "Mish Ochu"
   # Google Analitycs
   googleAnalitycsID = "Your ID"
-  # We're using formspree.io for form handling, paste your formspree url below
-  formspreeFormUrl  = "https://formspree.io/f/xnqljqyq"
   
   # Navbar Action Button
   [params.navAction]
@@ -86,7 +84,7 @@ archetypeDir = "hugo-tools/archetypes"
     # Footer Contact Info
     [params.footer.contactInfo]
       title   = "Contact Info"
-      address = "PO Box 397 Huntsville, UT 84720"
+      address = "PO Box 397 Huntsville, UT 84317"
       phone   = "385-202-6173"
       email   = "info@nokware.net"
       # Footer Sitemap
