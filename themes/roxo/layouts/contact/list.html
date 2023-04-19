@@ -10,42 +10,23 @@
       <div class="col-lg-6 ml-auto">
         <div class="site-contact-form">
           <h4>{{ .Params.form_heading }}</h4>
-          <!---->
-            <style type="text/css" scoped>
-              .mauticform_wrapper { max-width: 600px; margin: 10px auto; }
-              .mauticform-innerform {}
-              .mauticform-post-success {}
-              .mauticform-name { font-weight: bold; font-size: 1.5em; margin-bottom: 3px; }
-              .mauticform-description { margin-top: 2px; margin-bottom: 10px; }
-              .mauticform-error { margin-bottom: 10px; color: red; }
-              .mauticform-message { margin-bottom: 10px;color: green; }
-              .mauticform-row { display: block; margin-bottom: 20px; }
-              .mauticform-label { font-size: 1.1em; display: block; font-weight: bold; margin-bottom: 5px; }
-              .mauticform-row.mauticform-required .mauticform-label:after { color: #e32; content: " *"; display: inline; }
-              .mauticform-helpmessage { display: block; font-size: 0.9em; margin-bottom: 3px; }
-              .mauticform-errormsg { display: block; color: red; margin-top: 2px; }
-              .mauticform-selectbox, .mauticform-input, .mauticform-textarea { width: 100%; padding: 0.5em 0.5em; border: 1px solid #CCC; background: #fff; box-shadow: 0px 0px 0px #fff inset; border-radius: 4px; box-sizing: border-box; }
-              .mauticform-checkboxgrp-row {}
-              .mauticform-checkboxgrp-label { font-weight: normal; }
-              .mauticform-checkboxgrp-checkbox {}
-              .mauticform-radiogrp-row {}
-              .mauticform-radiogrp-label { font-weight: normal; }
-              .mauticform-radiogrp-radio {}
-              .mauticform-button-wrapper .mauticform-button.btn-default, .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default { color: #5d6c7c;background-color: #ffffff;border-color: #dddddd;}
-              .mauticform-button-wrapper .mauticform-button, .mauticform-pagebreak-wrapper .mauticform-pagebreak { display: inline-block;margin-bottom: 0;font-weight: 600;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 13px;line-height: 1.3856;border-radius: 3px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
-              .mauticform-button-wrapper .mauticform-button.btn-default[disabled], .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default[disabled] { background-color: #ffffff; border-color: #dddddd; opacity: 0.75; cursor: not-allowed; }
-              .mauticform-pagebreak-wrapper .mauticform-button-wrapper {  display: inline; }
-          </style><style type="text/css" scoped>
-              .mauticform-field-hidden { display:none }
-          </style>
 
-          <div id="mauticform_wrapper_nokwarecontactform" class="mauticform_wrapper">
+          <style type="text/css" scoped>
+            .mauticform-error { margin-bottom: 10px; color: red; }
+            .mauticform-message { margin-bottom: 10px; color: green; }
+            .mauticform-required .mauticform-label:after { color: #e32; content: " *"; display: inline; }
+            .mauticform-helpmessage { display: block; font-size: 0.9em; margin-bottom: 3px; }
+            .mauticform-errormsg { display: block; color: red; margin-top: 2px; }
+            .mautiform-field-hidden { display:none }
+          </style>
+          <!---->
+          <div id="mauticform_wrapper_nokwarecontactform" class="site-contact-form">
               <form autocomplete="false" role="form" method="post" action="https://mautic.nokware.net/form/submit?formId=1" id="mauticform_nokwarecontactform" data-mautic-form="nokwarecontactform" enctype="multipart/form-data" rel="nofollow">
                   <div class="mauticform-error" id="mauticform_nokwarecontactform_error"></div>
                   <div class="mauticform-message" id="mauticform_nokwarecontactform_message"></div>
                   <div class="mauticform-innerform">
                       
-                    <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+                    <div class="row" data-mautic-form-page="1">
 
                       <div id="mauticform_nokwarecontactform_firstname" class="mauticform-row mauticform-text mauticform-field-1 mauticform-required col-lg-6" data-validate="firstname" data-validation-type="text">
                           <input id="mauticform_input_nokwarecontactform_firstname" name="mauticform[firstname]" value="" placeholder="First Name" class="mauticform-input form-control" type="text">
@@ -62,29 +43,36 @@
                           <span class="mauticform-errormsg" style="display: none;">This is required.</span>
                       </div>
 
-                      <div id="mauticform_nokwarecontactform_projecttype" class="mauticform-row mauticform-select mauticform-field-4 select-wrapper">
-                          <label id="mauticform_label_nokwarecontactform_projecttype" for="mauticform_input_nokwarecontactform_projecttype" class="mauticform-label">Project Type</label>
-                          <select id="mauticform_input_nokwarecontactform_projecttype" name="mauticform[projecttype]" value="" placeholder="Project Type" class="mauticform-selectbox form-control">                    <option value="">Project Type</option>                    <option value="Application Design">appdesign</option>                    <option value="Consultation">consultation</option>                    <option value="Bitcoin Payment Server">bitcoinpayment</option>                    <option value="Server Build">server</option>                    <option value="Web Design">webdesign</option>                    <option value="Mail Server">mailserver</option>                    <option value="De-Google My Data">degoogle</option>
-                          </select>
-                          <span class="mauticform-errormsg" style="display: none;"></span>
+                      <div class="col-lg-6">
+                        <div id="mauticform_nokwarecontactform_projecttype" class="mauticform-row mauticform-select mauticform-field-4 select-wrapper">
+                            <select id="mauticform_input_nokwarecontactform_projecttype" name="mauticform[projecttype]" value="" placeholder="Project Type" class="mauticform-selectbox form-control">
+                              <option value="" selected disabled hidden>Project Type</option>                    
+                              <option value="appdesign">Application Design</option>                    
+                              <option value="consultation">Consultation</option>                    
+                              <option value="bitcoinpayment">Bitcoin Payment Server</option>                    
+                              <option value="server">Server Build</option>                    
+                              <option value="webdesign">Web Design</option>                    
+                              <option value="mailserver">Mail Server</option>                    
+                              <option value="degoogle">De-Google My Data</option>
+                            </select>
+                            <span class="mauticform-errormsg" style="display: none;"></span>
+                        </div>
                       </div>
 
                       <div id="mauticform_nokwarecontactform_aboutproject" class="mauticform-row mauticform-text mauticform-field-5 mauticform-required col-12" data-validate="aboutproject" data-validation-type="textarea">
-                          <textarea id="mauticform_input_nokwarecontactform_aboutproject" name="mauticform[aboutproject]" class="mauticform-textarea form-control">About the project</textarea>
+                          <textarea id="mauticform_input_nokwarecontactform_aboutproject" name="mauticform[aboutproject]" class="mauticform-textarea form-control" placeholder="About the project"></textarea>
                           <span class="mauticform-errormsg" style="display: none;">This is required.</span>
                       </div>
 
                       <div id="mauticform_nokwarecontactform_submit" class="mauticform-row mauticform-button-wrapper mauticform-field-6 col-12">
                           <button type="submit" name="mauticform[submit]" id="mauticform_input_nokwarecontactform_submit" value="" class="mauticform-button btn btn-primary">Send Message</button>
                       </div>
-                      </div>
+                    </div>
                   </div>
-
                   <input type="hidden" name="mauticform[formId]" id="mauticform_nokwarecontactform_id" value="1">
                   <input type="hidden" name="mauticform[return]" id="mauticform_nokwarecontactform_return" value="">
                   <input type="hidden" name="mauticform[formName]" id="mauticform_nokwarecontactform_name" value="nokwarecontactform">
-
-                  </form>
+                </form>
           </div>
         </div>
       </div>
