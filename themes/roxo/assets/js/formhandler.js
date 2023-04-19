@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", function() {
       var head            = document.getElementsByTagName('head')[0];
       var script          = document.createElement('script');
       script.type         = 'text/javascript';
-      script.src          = 'https://mautic.nokware.net/index.php/media/js/mautic-form.js?vf6fd3319';
+      script.src          = 'https://mautic.nokware.net/media/js/mautic-form.js?vf6fd3319';
       script.onload       = function() {
           MauticSDK.onLoad();
       };
