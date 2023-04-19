@@ -1,7 +1,8 @@
 window.addEventListener("DOMContentLoaded", function() {    
   /** This section is only needed once per page if manually copying **/
+  let { MauticSDKLoaded, MauticDomain, MauticLang } = window;
   if (typeof MauticSDKLoaded == 'undefined') {
-      var MauticSDKLoaded = true;
+      window.MauticSDKLoaded = true;
       var head            = document.getElementsByTagName('head')[0];
       var script          = document.createElement('script');
       script.type         = 'text/javascript';
@@ -10,11 +11,11 @@ window.addEventListener("DOMContentLoaded", function() {
           MauticSDK.onLoad();
       };
       head.appendChild(script);
-      var MauticDomain = 'https://mautic.nokware.net/index.php';
-      var MauticLang   = {
+      window.MauticDomain = 'https://mautic.nokware.net/index.php';
+      window.MauticLang   = {
           'submittingMessage': "Please wait..."
       }
-  }else if (typeof MauticSDK != 'undefined') {
+  } else if (typeof MauticSDK != 'undefined') {
       MauticSDK.onLoad();
   }
 });
