@@ -26,10 +26,6 @@ archetypeDir = "hugo-tools/archetypes"
     url     = "blog"
     weight  = 4
   [[menu.nav]]
-    name    = "Mail"
-    url     = "mail"
-    weight  = 6
-  [[menu.nav]]
     name    = "Get in touch"
     url     = "contact"
     weight  = 7
