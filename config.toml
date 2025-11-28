@@ -80,7 +80,7 @@ archetypeDir = "hugo-tools/archetypes"
     # Footer Contact Info
     [params.footer.contactInfo]
       title   = "Contact Info"
-      address = "PO Box 5811 Salt Lake City, UT 84158"
+      address = "PO BOX 521205 Salt Lake City, Utah 84152"
       phone   = "‪(801) 935-8937"
       email   = "info@nokware.net"
       # Footer Sitemap
