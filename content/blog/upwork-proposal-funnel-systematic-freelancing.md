@@ -2,8 +2,8 @@
 title: "Building a Systematic Approach to Freelance Proposals"
 date: 2025-12-12T11:37:32-07:00
 draft: true
-image: images/blog/blog-post-04.jpg
-feature_image: images/blog/blog-details-image.jpg
+image: images/blog/nokware-upwork-proposal-funnel.png
+feature_image: images/blog/nokware-upwork-proposal-funnel.png
 author: Mishael Ochu
 ---
 ### From Ad-Hoc Applications to a Repeatable Proposal Pipeline

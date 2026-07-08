@@ -1,8 +1,8 @@
 ---
 title: "Docker VPN Database Client: Simplifying Secure Database Access"
 date: 2025-11-19T15:25:01-07:00
-image: images/blog/blog-post-03.jpg
-feature_image: images/blog/blog-details-image.jpg
+image: images/blog/nokware-docker-vpn-database.png
+feature_image: images/blog/nokware-docker-vpn-database.png
 author: Mishael Ochu
 ---
 ### Containerized VPN Access to AWS Database Infrastructure

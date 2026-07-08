@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="title">
+  <title id="title">Epik Ops</title>
+  <rect width="260" height="120" fill="#ffffff"/>
+  <rect x="30" y="32" width="62" height="56" rx="12" fill="#1e293b"/>
+  <path d="M48 62h26M61 49v26" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="82" cy="40" r="8" fill="#f59e0b"/>
+  <text x="110" y="58" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#1e293b">Epik</text>
+  <text x="110" y="81" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0284c7">Ops</text>
+</svg>

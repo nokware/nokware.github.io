@@ -1,8 +1,8 @@
 ---
 title: "Hydra Agents: Building an AI-Powered PR Review System"
 date: 2025-10-04T21:35:38-06:00
-image: images/blog/blog-post-01.jpg
-feature_image: images/blog/blog-details-image.jpg
+image: images/blog/nokware-hydra-pr-review.png
+feature_image: images/blog/nokware-hydra-pr-review.png
 author: Mishael Ochu
 ---
 ### Automating Code Review with Claude AI and Jenkins

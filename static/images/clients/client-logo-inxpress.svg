@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="title">
+  <title id="title">InXpress</title>
+  <rect width="260" height="120" fill="#ffffff"/>
+  <path d="M34 76 62 35h20L54 76H34Z" fill="#00a6ce"/>
+  <path d="M78 35h20L70 76H50l28-41Z" fill="#f28c28"/>
+  <text x="106" y="70" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#17446a">InXpress</text>
+</svg>

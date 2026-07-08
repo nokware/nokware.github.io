@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="title">
+  <title id="title">Nokmetia</title>
+  <rect width="260" height="120" fill="#ffffff"/>
+  <path d="M60 26 94 84H26L60 26Z" fill="#111827"/>
+  <path d="M60 42 78 74H42L60 42Z" fill="#f5c542"/>
+  <text x="112" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#111827">Nokmetia</text>
+</svg>

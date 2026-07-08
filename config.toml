@@ -61,7 +61,7 @@ archetypeDir = "hugo-tools/archetypes"
   [params.portfolio]
     enable    = true
     title     = "OUR RECENT WORK"
-    subtitle  = "Crafting experiences and seeking to make the complex clear & beautiful."
+    subtitle  = "Practical systems work across email operations, agent workflows, secure access, technical analysis, and automation."
 
   [params.call_to_action]
     enable              = true

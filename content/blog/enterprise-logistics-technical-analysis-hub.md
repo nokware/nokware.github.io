@@ -1,8 +1,8 @@
 ---
 title: "Building a Technical Analysis Hub for Enterprise Logistics"
 date: 2025-08-13T06:26:21-06:00
-image: images/blog/blog-post-01.jpg
-feature_image: images/blog/blog-details-image.jpg
+image: images/blog/nokware-logistics-analysis-hub.png
+feature_image: images/blog/nokware-logistics-analysis-hub.png
 author: Mishael Ochu
 ---
 ### Centralizing Knowledge for a Complex Multi-Tenant System

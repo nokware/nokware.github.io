@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="title">
+  <title id="title">Wraith Reach</title>
+  <rect width="260" height="120" fill="#ffffff"/>
+  <path d="M30 76c18-38 48-48 70-28-24 2-36 13-43 32-9-9-18-10-27-4Z" fill="#111827"/>
+  <path d="M58 70c10-17 25-24 44-23-12 7-21 18-25 33-5-7-12-10-19-10Z" fill="#8b5cf6"/>
+  <text x="116" y="57" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#111827">Wraith</text>
+  <text x="116" y="81" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#7c3aed">Reach</text>
+</svg>

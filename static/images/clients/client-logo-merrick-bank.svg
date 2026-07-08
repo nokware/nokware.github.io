@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-labelledby="title">
+  <title id="title">Merrick Bank</title>
+  <rect width="260" height="120" fill="#ffffff"/>
+  <path d="M32 80V40h52l14 20-14 20H32Z" fill="#1f5f8b"/>
+  <path d="M48 70V50h27l7 10-7 10H48Z" fill="#ffffff"/>
+  <text x="112" y="55" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#1f2937">Merrick</text>
+  <text x="112" y="80" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f5f8b">Bank</text>
+</svg>
