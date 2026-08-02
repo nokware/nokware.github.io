@@ -94,21 +94,6 @@ archetypeDir = "hugo-tools/archetypes"
         [[params.footer.sitemap.link]]
           name = "Contact"
           url  = "contact"
-      # Footer Social Media
-      [params.footer.social]
-        title   = "Social Media"
-        [[params.footer.social.link]]
-          name = "Gab"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Twitter"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Youtube"
-          url  = "#"
-        [[params.footer.social.link]]
-          name = "Instagram"
-          url  = "#"
       # Footer Service
       [params.footer.service]
         title       = "We help people:"
