@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $turnstileSiteKey := .Site.Params.turnstile.siteKey }}
 <section class="site-contact">
   <div class="container">
     <div class="row">
@@ -42,6 +43,13 @@
               <div class="col-12">
                 <textarea name="about_project" class="form-control" placeholder="About the project" rows="4"></textarea>
               </div>
+
+              {{ with $turnstileSiteKey }}
+              <div class="col-12">
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                <div class="cf-turnstile" data-sitekey="{{ . }}"></div>
+              </div>
+              {{ end }}
 
               <div class="col-12">
                 <button type="submit" class="btn btn-primary">Send Message</button>

@@ -98,3 +98,7 @@ archetypeDir = "hugo-tools/archetypes"
       [params.footer.service]
         title       = "We help people:"
         description = "design and develop solutions<br>produce valuable cultural content<br>create fresh experiences<br>own their own infrastructure"
+
+  [params.turnstile]
+    # Public Cloudflare Turnstile site key for nokware.net. The matching secret belongs in Mail-Mgmt as TURNSTILE_SECRET_KEY.
+    siteKey = "0x4AAAAAAEIJfS5bdCpAHirV"
