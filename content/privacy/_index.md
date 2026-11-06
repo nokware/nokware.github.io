@@ -5,7 +5,7 @@ description: "How Nokware measures public readership and requested email subscri
 
 Nokware uses self-hosted analytics to measure public page visits, referring platforms, campaigns, and email signup actions. Analytics is operated on Nokware infrastructure, rather than Facebook or Google analytics services.
 
-A random visit identifier and acquisition context are stored in browser session storage for a rolling 30-minute visit. We collect page paths and approved campaign fields, not arbitrary URL query strings or form contents. Browser and coarse device information help summarize usage. The collector processes an IP address to derive its visitor estimate; raw IP addresses are not stored in the analytics database. Analytics records are retained for up to 13 months, with backups retained for 30 days.
+A random visit identifier and acquisition context are stored in browser session storage for a rolling 30-minute visit. We collect page paths and approved campaign fields, not arbitrary URL query strings or form contents. Browser and coarse device information help summarize usage. The web server receives an IP address to handle the connection, but analytics uses the opaque visit identifier with a neutral address rather than retaining or using your address as a visitor key. Analytics records are retained for up to 13 months, with backups retained for 30 days.
 
 We honor Do Not Track and Global Privacy Control. Browser blockers can also prevent collection. Local draft previews do not collect analytics.
 
