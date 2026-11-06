@@ -22,4 +22,7 @@
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ "images/favicon.png" | relURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ "images/favicon.ico" | relURL }}" type="image/x-icon" />
+  {{ if and hugo.IsProduction (not hugo.IsServer) }}
+  <script defer src="https://analytics.nokware.net/nokware.js"></script>
+  {{ end }}
 </head>
