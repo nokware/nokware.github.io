@@ -1,7 +1,7 @@
 ---
 title: "Automating Time Logging with Git and Calendar Data"
 date: 2025-12-18T12:42:56-07:00
-draft: true
+draft: false
 image: images/blog/nokware-time-logging-automation.png
 feature_image: images/blog/nokware-time-logging-automation.png
 author: Mishael Ochu

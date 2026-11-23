@@ -7,7 +7,9 @@
         <article class="site-blog-details">
           <p><span>{{ .PublishDate.Format "January 2, 2006" }}</span> by <span>{{ .Params.author }}</span></p>
           <h2 class="blog-title">{{ .Title }}</h2>
-          <img class="feature-image" src="{{ .Params.feature_image | relURL }}" alt="blog-feature-image">
+          {{ with .Params.feature_image }}
+          <img class="feature-image" src="{{ . | relURL }}" alt="blog-feature-image">
+          {{ end }}
           {{ .Content }}
         </article>
       </div>
