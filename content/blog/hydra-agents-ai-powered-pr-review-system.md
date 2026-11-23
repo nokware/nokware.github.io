@@ -4,52 +4,36 @@ date: 2025-10-04T21:35:38-06:00
 image: images/blog/nokware-hydra-pr-review.png
 feature_image: images/blog/nokware-hydra-pr-review.png
 author: Mishael Ochu
+lastmod: 2026-11-23
 ---
-### Automating Code Review with Claude AI and Jenkins
 
-When managing multiple client repositories with frequent pull requests, manual code review becomes a bottleneck. I built **Hydra Agents** to solve this - an event-driven system that uses Claude AI to automatically review pull requests against Jira requirements, security standards, and code quality guidelines.
+I built Hydra Agents to review pull requests across client repositories. A review starts from a Bitbucket event and uses the code changes together with the Jira requirements.
 
-#### The Architecture
+### Run a review when the pull request changes
 
-The system is built on a cost-optimized, event-driven design:
+Bitbucket webhooks trigger a Jenkins pipeline when a pull request is created or updated. The pipeline gathers the changes and requirements for Claude to review. Depending on the workflow, a Discord approval step lets a team lead review the result before it is posted to Bitbucket.
 
-1. **Bitbucket Webhooks** trigger reviews when PRs are created or updated
-2. **Jenkins Pipelines** orchestrate the review process
-3. **Claude AI** analyzes code changes against Jira ticket requirements
-4. **Discord Bot** provides optional human-in-the-loop approval before publishing
+The review covers security concerns, code quality, test coverage and performance implications. The pipeline also detects supported build tooling, including npm, Maven, Gradle, pip and Composer, and runs the corresponding checks.
 
-This architecture means no idle resources - the system only runs when there's work to do, eliminating the cost of persistent agent containers.
+### Cache repositories between runs
 
-#### Key Features
+Cloning every repository for each review was expensive for clients with more than 20 repositories. A persistent Jenkins cache keeps the checkout structure available for later runs.
 
-- **Context-Aware Reviews**: Claude analyzes PRs against the actual Jira requirements, not just blind code review
-- **Multi-Repository Support**: Handles large monorepos with 20+ repositories using intelligent caching
-- **Comprehensive Analysis**: Reviews cover security vulnerabilities, code quality, test coverage, and performance implications
-- **Automated Build/Test**: Detects build systems (npm, maven, gradle, pip, composer) and runs CI automatically
-
-#### Repository Caching Strategy
-
-For clients with many repositories, clone times can be significant. The system maintains a persistent cache that reduces review time from 2-5 minutes on first review to 30-60 seconds for subsequent reviews.
-
-```groovy
-// Cache structure for multi-repo clients
+```text
 /var/jenkins/client-repos/
-  └── client-name/
-      └── pr-review/
-          ├── shipping-api/
-          ├── integrations/
-          └── legacy-system/
-              ├── admin-back-office/
-              ├── franchise/
-              └── ... (20+ repos)
+  client-name/
+    pr-review/
+      shipping-api/
+      integrations/
+      legacy-system/
+        admin-back-office/
+        franchise/
 ```
 
-#### Human-in-the-Loop with Discord
+The recorded review times were two to five minutes on an initial run and 30 to 60 seconds on subsequent runs using the cache. Those timings describe that setup, including the available repository cache.
 
-Not every automated review should be published immediately. The Discord bot provides an approval workflow with rich embeds showing the review summary, allowing team leads to approve or reject before the review is posted to Bitbucket.
+### Review the generated review
 
-#### Results
+The Discord approval message presents a summary so a team lead can approve or reject publication. That gives the reviewer a chance to catch a mistaken interpretation of a requirement before the comment reaches the pull request.
 
-The system currently handles PR reviews for multiple clients, providing consistent, thorough reviews within minutes of PR creation. The event-driven architecture keeps costs minimal while the Claude AI integration ensures reviews are genuinely useful - not just automated noise.
-
-> Building automation that augments human capability rather than replacing it entirely has been the key to adoption and trust.
+Build results and the generated analysis remain separate evidence. A passing build cannot establish that the review understood the requirement, and a confident review still needs to be checked against the change.

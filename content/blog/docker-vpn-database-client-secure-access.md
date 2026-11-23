@@ -4,35 +4,20 @@ date: 2025-11-19T15:25:01-07:00
 image: images/blog/nokware-docker-vpn-database.png
 feature_image: images/blog/nokware-docker-vpn-database.png
 author: Mishael Ochu
+lastmod: 2026-11-23
 ---
-### Containerized VPN Access to AWS Database Infrastructure
 
-Connecting to databases behind a corporate VPN typically requires each developer to configure their own VPN client, manage credentials, and remember connection strings for multiple environments. I built a Docker-based solution that abstracts away this complexity.
+I needed database access across development, UAT, staging and hotfix environments in the UK, US and Australia. Each developer had to configure a VPN client and database tooling before making a connection.
 
-#### The Challenge
+I packaged OpenVPN and a MySQL client in a Docker container. The container establishes the tunnel on startup, checks connectivity and exposes a command for choosing an environment.
 
-Working with databases across multiple environments (dev, UAT, staging, hotfix) and geographic regions (UK, US, AU) meant:
-- Manual VPN client configuration
-- Remembering different connection strings per environment
-- Troubleshooting connectivity issues individually
-- Managing credentials securely
-
-#### The Solution: A Self-Contained Container
-
-The Docker container handles everything:
-
-1. **Automatic VPN Connection** - Establishes OpenVPN tunnel on startup
-2. **Pre-configured Database Client** - MySQL client ready to use
-3. **Simple CLI Interface** - Connect with a single command
-4. **Multi-environment Support** - Switch between environments easily
-
-#### Usage Examples
+### Connect through the container
 
 ```bash
 # Interactive session to sync-dev
 ./db-connect.sh sync-dev
 
-# Connect to specific database
+# Connect to a specific database
 ./db-connect.sh sync-dev production_database
 
 # Execute a query directly
@@ -42,24 +27,11 @@ The Docker container handles everything:
 ./db-connect.sh sync-dev -f query.sql
 ```
 
-#### Smart VPN Management
+Startup creates the TUN device when needed, starts OpenVPN and waits for the connection with a 60-second timeout and retry. It then verifies DNS resolution before accepting database connections. Shutdown handles tunnel cleanup.
 
-The container handles VPN lifecycle automatically:
+### Maintain the environment configuration
 
-```bash
-# Startup sequence
-1. Create TUN device if needed
-2. Start OpenVPN client
-3. Wait for connection (60-second timeout with retry)
-4. Verify DNS resolution
-5. Ready for database connections
-```
-
-Graceful shutdown ensures proper cleanup when stopping the container.
-
-#### Centralized Configuration
-
-All database environments are defined in a single JSON configuration:
+A JSON file holds the connection settings. This example uses placeholder values.
 
 ```json
 {
@@ -69,36 +41,16 @@ All database environments are defined in a single JSON configuration:
     "user": "developer",
     "password": "...",
     "status": "active"
-  },
-  "sync-uat": { ... },
-  "sync-stage": { ... }
+  }
 }
 ```
 
-This centralization means updating credentials or adding environments requires changing one file, not reconfiguring every developer's machine.
-
-#### Security Features
-
-- **Encrypted VPN tunnel** with AES-256-GCM
-- **Certificate-based authentication**
-- **Credentials in configuration**, not environment variables or shell history
-- **Container isolation** from host system
-
-#### Developer Experience
-
-The goal was zero-friction database access:
+Adding an environment or updating a credential changes that configuration file. Developers select the environment by name. The setup uses certificate authentication and an AES-256-GCM VPN tunnel, and the connection commands select entries from the configuration file.
 
 ```bash
-# Start the container
 docker-compose up -d
-
-# Connect to any environment
 docker exec -it vpn-db-client db-connect.sh sync-dev
-
-# Test all connections
 docker exec -it vpn-db-client test-connections.sh
 ```
 
-New team members can access all database environments within minutes of cloning the repository, rather than spending hours on VPN and client configuration.
-
-> Good developer tooling should make the complex feel simple and the secure feel effortless.
+This puts the VPN startup sequence and connectivity checks in a script I can maintain and test. It also gives a developer a consistent starting point when a connection fails.

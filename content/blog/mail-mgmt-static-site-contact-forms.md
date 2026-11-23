@@ -4,34 +4,20 @@ date: 2026-07-08T08:00:00-06:00
 image: images/blog/nokware-mail-mgmt-contact-form.png
 feature_image: images/blog/nokware-mail-mgmt-contact-form.png
 author: Mishael Ochu
+lastmod: 2026-11-23
 ---
-### Owning the First Customer Touchpoint
 
-Static sites are fast, cheap, and easy to deploy, but contact forms often become the place where ownership quietly leaks away. A simple form gets handed to a third-party marketing service, then contact data, consent state, confirmations, and routing all live outside the business.
+I moved Nokware's contact form to `mail-mgmt.nokware.net` so I could manage inquiries alongside the subscription and delivery records I already maintained there. Hugo continues to publish the website through static hosting.
 
-For Nokware, I moved the website contact flow onto **mail-mgmt**, a small internal service running at `mail-mgmt.nokware.net`. The goal is not to build a giant marketing platform. The goal is to own the path from "someone wants to talk" to "the right inbox or workflow receives the request."
+### Follow an inquiry from the browser
 
-#### The Shape of the Integration
+1. The contact page renders an HTML form.
+2. The browser posts to `https://mail-mgmt.nokware.net/api/public/contact`.
+3. The service validates the fields, rate-limits submissions and checks the honeypot.
+4. It creates a structured email notification and records an audit event.
+5. The browser returns to the contact page after receipt.
 
-The Hugo site stays simple:
-
-1. The contact page renders a normal HTML form.
-2. The form posts to `https://mail-mgmt.nokware.net/api/public/contact`.
-3. The mail service validates the fields, rate-limits submissions, and applies a honeypot check.
-4. The service sends a structured email notification and records an audit event.
-5. Browser submissions redirect back to the contact page after receipt.
-
-That gives the static site a useful backend without turning the site itself into an application.
-
-#### Why This Matters
-
-The most important part is the boundary. Hugo is responsible for publishing pages. `mail-mgmt` is responsible for accepting public mail-related actions, enforcing consent rules, and routing messages. That separation keeps the site deployable through static hosting while giving Nokware a place to add better operational behavior over time.
-
-The same service already handles double opt-in subscriptions and unsubscribe flows. Contact inquiries are a natural adjacent capability because they need many of the same primitives: public form handling, spam resistance, notification delivery, and auditability.
-
-#### A Small Endpoint Beats a Large Dependency
-
-For this kind of workflow, the code can stay boring:
+The request contains the fields needed to route the inquiry.
 
 ```text
 POST /api/public/contact
@@ -43,10 +29,10 @@ POST /api/public/contact
   source_url
 ```
 
-The endpoint does not need to know about the Hugo theme, and the Hugo page does not need to know about the mail provider. Each side gets a narrow contract.
+Hugo owns the page and form presentation. `mail-mgmt` accepts the request and handles notification delivery. The endpoint has no dependency on the Hugo theme, and the page has no mail-provider credentials.
 
-#### What Comes Next
+### Reuse the existing service
 
-The next useful step is turning inquiries into a richer internal workflow: tagging project types, routing infrastructure requests differently from consulting requests, and optionally opening follow-up tasks in the agent router. The important thing is that the foundation is now ours.
+The mail service already handles double opt-in and unsubscribe requests. Contact inquiries use some of the same form-validation and notification machinery, while retaining their own request flow.
 
-> A contact form is small, but it sits at the edge of the business. That makes it worth owning.
+Project-type tagging and follow-up tasks are possible extensions. They would belong behind this endpoint, where I can change the routing without redeploying the site's presentation code.

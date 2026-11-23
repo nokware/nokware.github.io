@@ -5,46 +5,33 @@ draft: false
 image: images/blog/nokware-time-logging-automation.png
 feature_image: images/blog/nokware-time-logging-automation.png
 author: Mishael Ochu
+lastmod: 2026-11-23
 ---
-### From Hours of Manual Entry to Minutes of Automation
 
-Time tracking is essential for billing and project management, but manually logging hours is tedious and error-prone. I built an automation system that generates Tempo time entries by mining data from multiple sources: Outlook calendars, git commits, and Bitbucket PR reviews.
+Preparing time entries meant reviewing Outlook calendars, Git commits and Bitbucket pull-request activity, then assigning each item to a Tempo issue. That took 30 to 60 minutes a week and left room to miss work recorded in another system.
 
-#### The Problem
+I built a pipeline that gathers those records and prepares a logging script for review.
 
-As a contractor working across multiple repositories and attending various meetings, tracking time accurately meant:
-- Reviewing calendar entries daily
-- Cross-referencing git history for development work
-- Checking Bitbucket for PR review activity
-- Manually entering each item into Tempo with the correct Jira issue
+### Assemble the entries
 
-This process took 30-60 minutes per week and was prone to missing items.
+The pipeline has six steps that can run together or independently.
 
-#### The Solution: A Six-Step Pipeline
+1. Extract meetings from Outlook calendar PDFs.
+2. Categorize standups, availability slots and other meetings.
+3. Query commits across more than 25 repositories.
+4. Collect Bitbucket review activity.
+5. Generate a script for the Tempo API.
+6. Check totals against the daily 14-hour limit.
 
-The system breaks down into modular steps that can run independently or together:
-
-1. **Parse Calendar PDF** - Extract meetings from Outlook calendar exports
-2. **Categorize Meetings** - Auto-classify standups, availability slots, and other meetings
-3. **Mine Git Commits** - Query commits across 25+ repositories
-4. **Track PR Reviews** - Query Bitbucket API for review activity
-5. **Generate Logging Script** - Create executable bash scripts for Tempo API
-6. **Verify Totals** - Ensure no day exceeds the 14-hour limit
-
-#### Automatic Meeting Categorization
+Meeting categories map to Jira issues. These issue keys are examples.
 
 ```bash
-# Meetings are mapped to predefined Jira issues
-STANDUP_ISSUE="PROJ-100"      # Daily standups
-AVAILABILITY_ISSUE="PROJ-101"  # Short meetings, availability
-OTHER_MEETING_ISSUE="PROJ-102" # General meetings
+STANDUP_ISSUE="PROJ-100"
+AVAILABILITY_ISSUE="PROJ-101"
+OTHER_MEETING_ISSUE="PROJ-102"
 ```
 
-The system recognizes patterns in meeting titles to categorize them automatically, saving manual classification time.
-
-#### Multi-Repository Support
-
-Working with my client's 21+ legacy repositories plus several newer ones requires efficient commit tracking:
+The Git step extracts issue IDs from commit messages within the selected date range. Its repository list covers the client's legacy repositories and newer services.
 
 ```bash
 REPOS=(
@@ -53,25 +40,16 @@ REPOS=(
     "/path/to/analysis"
     "/path/to/legacy-system/admin-back-office"
     "/path/to/legacy-system/franchise"
-    # ... 20+ more
 )
 ```
 
-The system queries each repository for commits within the date range, extracting Jira issue IDs from commit messages.
+### Inspect the generated script
 
-#### Safe Execution with Dry-Run Mode
-
-Generated scripts include dry-run mode by default - API calls are commented out for review before execution:
+The generated API calls are commented out by default. I can inspect the proposed entries and totals before enabling them.
 
 ```bash
-# DRY RUN - Uncomment to execute
+# DRY RUN — Uncomment after reviewing the proposed entries
 # curl -X POST "$TEMPO_API_URL/worklogs" ...
 ```
 
-This prevents accidental duplicate entries and allows verification before submission.
-
-#### Results
-
-What once took 30-60 minutes of manual work now completes in under 5 minutes. The system has successfully processed 100+ meetings and 40+ development issues in a two-week period, maintaining compliance with daily hour limits throughout.
-
-> Automation should make the tedious invisible while keeping the human in control of the final output.
+The recorded two-week run processed more than 100 meetings and 40 development issues while retaining the daily-limit checks. Preparation took under five minutes. Reviewing the generated entries remained part of the workflow before submission.
